@@ -7,6 +7,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="titleTextColor">@color/sub_color</item> <!-- 타이틀바 텍스트 색상변경 -->
         <item name="android:actionOverflowButtonStyle">@style/AppTheme.OverFlow</item> <!-- 메뉴컬러 -->
+        <item name="android:datePickerStyle">@style/DialogTheme</item> <!-- 데이트피커 색 -->
 
     </style>
     <style name="FullScreenThem" parent="Theme.AppCompat.Light.NoActionBar"> <!-- 타이틀바 지우기 -->
@@ -14,5 +15,12 @@
     </style>
     <style name="AppTheme.OverFlow" parent="Widget.AppCompat.ActionButton.Overflow"> <!-- 메뉴컬러 -->
         <item name="android:tint">@color/main_color</item>
+    </style>
+
+    <!-- 데이트피커 주말 색 바꾸기 -->
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/sub_color</item>
+        <item name="android:textColor">@color/main_color</item>
+        <item name="colorControlActivated">@color/sub_sub_color</item>
     </style>
 </resources>
