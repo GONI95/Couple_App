@@ -1,0 +1,18 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/white</item> <!-- 타이틀바 색상변경 -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="titleTextColor">@color/sub_color</item> <!-- 타이틀바 텍스트 색상변경 -->
+        <item name="android:actionOverflowButtonStyle">@style/AppTheme.OverFlow</item> <!-- 메뉴컬러 -->
+
+    </style>
+    <style name="FullScreenThem" parent="Theme.AppCompat.Light.NoActionBar"> <!-- 타이틀바 지우기 -->
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="AppTheme.OverFlow" parent="Widget.AppCompat.ActionButton.Overflow"> <!-- 메뉴컬러 -->
+        <item name="android:tint">@color/main_color</item>
+    </style>
+</resources>

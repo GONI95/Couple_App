@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.skyfishjy.library.RippleBackground xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Keep_the_Love"
+    android:id="@+id/content"
+    app:rb_color="@color/sub_color"
+    app:rb_radius="32dp"
+    app:rb_rippleAmount="3"
+    app:rb_duration="3000"
+    app:rb_scale="5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:gravity="center"
+            android:layout_margin="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="#5D5D5D"
+            android:text="@string/title_name"/>
+    </LinearLayout>
+
+    <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/centerImage"
+            android:src="@drawable/love"/>
+    </com.skyfishjy.library.RippleBackground>
