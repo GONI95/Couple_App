@@ -35,7 +35,7 @@ class Keep_the_Love : AppCompatActivity() {
 
         // 공유프리프랜스
         val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile, Context.MODE_PRIVATE)
-        val editor:SharedPreferences.Editor =  sharedPreferences.edit()
+        //val editor:SharedPreferences.Editor =  sharedPreferences.edit()
         //sharedpreferenceData.ClearData(this)
 
 

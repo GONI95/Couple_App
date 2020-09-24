@@ -110,4 +110,52 @@ object SharedPreference_data {
 
         return diffDays+1    // 빼기때문에 만난지 하루만에 넣으면 0이 나옴
     }
+
+    fun dday_100(context: Context?) : Long {
+        val c = Calendar.getInstance()
+        val c1 = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
+
+        c.set(year, month+1, day)
+        Log.d("c", "${c.toString()}")
+        c1.set(LoadYear(context), LoadMonth(context), LoadDay(context))
+        c1.add(Calendar.DAY_OF_MONTH, 100)
+        Log.d("c1", "${c1.toString()}")
+
+        var millis1 = c.timeInMillis
+        Log.d("millis1", "${millis1.toString()}")
+        var millis2 = c1.timeInMillis
+        Log.d("millis2", "${millis2.toString()}")
+
+        val diff = millis2 - millis1
+        val diffDays = diff / (24 * 60 * 60 * 1000)
+
+        return diffDays-1    // 빼기때문에 만난지 하루만에 넣으면 0이 나옴
+    }
+
+    fun dday_200(context: Context?) : Long {
+        val c = Calendar.getInstance()
+        val c1 = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
+
+        c.set(year, month+1, day)
+        Log.d("c", "${c.toString()}")
+        c1.set(LoadYear(context), LoadMonth(context), LoadDay(context))
+        c1.add(Calendar.DAY_OF_MONTH, 200)
+        Log.d("c1", "${c1.toString()}")
+
+        var millis1 = c.timeInMillis
+        Log.d("millis1", "${millis1.toString()}")
+        var millis2 = c1.timeInMillis
+        Log.d("millis2", "${millis2.toString()}")
+
+        val diff = millis2 - millis1
+        val diffDays = diff / (24 * 60 * 60 * 1000)
+
+        return diffDays-1    // 빼기때문에 만난지 하루만에 넣으면 0이 나옴
+    }
 }
