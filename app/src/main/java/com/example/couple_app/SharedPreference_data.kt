@@ -10,6 +10,7 @@ object SharedPreference_data {
     // sharedpreferences
     private val sharedPrefFile = "kotlinsharedpreference"
     val year_key = "year"
+
     fun LoadYear(context: Context?) : Int{
         // 현재 값을 확인하기 위해서 넣었음
         val sharedPreferences: SharedPreferences = context!!.getSharedPreferences(

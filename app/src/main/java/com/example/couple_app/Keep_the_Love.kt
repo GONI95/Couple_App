@@ -23,18 +23,24 @@ class Keep_the_Love : AppCompatActivity() {
     val month = c.get(Calendar.MONTH)    // 월 얻어옴 0부터 시작함 + 1
     val day = c.get(Calendar.DAY_OF_MONTH)      // 날짜 얻어옴
 
+    companion object{
+        val TAG = Keep_the_Love::class.java.simpleName
+        val sharedpreferenceData = SharedPreference_data
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.keep_the_love)
 
-        var sharedpreferenceData = SharedPreference_data
+        Log.d(TAG, "HashCode : ${Home.sharedpreferenceData.hashCode()}")
+        // 싱글톤 맞는지 확인해보기위함
 
         // 물결 잔상 사용
         val rippleBackground = findViewById(R.id.content) as RippleBackground
         rippleBackground.startRippleAnimation()
 
         // 공유프리프랜스
-        val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile, Context.MODE_PRIVATE)
+        val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile, MODE_PRIVATE)
         //val editor:SharedPreferences.Editor =  sharedPreferences.edit()
         //sharedpreferenceData.ClearData(this)
 

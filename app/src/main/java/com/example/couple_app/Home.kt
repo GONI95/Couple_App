@@ -17,22 +17,23 @@ import java.util.*
 
 
 class Home : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
-    var sharedpreferenceData = SharedPreference_data
-
-    //lateinit var constraintLayout : ConstraintLayout  // 늦은 초기화 , 색변경
-
     val c = Calendar.getInstance()
     val year = c.get(Calendar.YEAR)
     val month = c.get(Calendar.MONTH)
     val day = c.get(Calendar.DAY_OF_MONTH)
 
-    //private var result = ""
+    companion object{
+        val TAG = Home::class.java.simpleName
+        val sharedpreferenceData = SharedPreference_data
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home)
 
-        //constraintLayout = findViewById(R.id.hi) as ConstraintLayout
+        Log.d(TAG, "HashCode : ${sharedpreferenceData.hashCode()}")
+        // 싱글톤 맞는지 확인해보기위함
 
         var illustration = findViewById(R.id.illustration) as ImageView
 
@@ -40,7 +41,9 @@ class Home : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeList
         var d_day_100 = findViewById(R.id.Dday_100) as TextView
         var d_day_200 = findViewById(R.id.Dday_200) as TextView
         // 만난지 몇일이 되었는지
-        calculate_day.setText(resources.getString(R.string.we) + sharedpreferenceData.calculate(this).toString())
+        calculate_day.setText(
+            resources.getString(R.string.we) + sharedpreferenceData.calculate(this).toString()
+        )
         //백일까지 몇일이 남았는지
         d_day_100.setText("100일 D-day :" + sharedpreferenceData.dday_100(this).toString())
         //이백일까지 몇일이 남았는지
@@ -107,7 +110,11 @@ class Home : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeList
             //constraintLayout.setBackgroundColor(applicationContext.resources.getColor(R.color.sub_color)) 색 변경
         }
         // 이 둘은 layout 아이디를 그대로 가져와 쓰는 것임
-        Calculate_days.setText(resources.getString(R.string.we) + sharedpreferenceData.calculate(this).toString())
+        Calculate_days.setText(
+            resources.getString(R.string.we) + sharedpreferenceData.calculate(
+                this
+            ).toString()
+        )
         Dday_100.setText("100일 D-day :" + sharedpreferenceData.dday_100(this).toString())
         Dday_200.setText("200일 D-day :" + sharedpreferenceData.dday_200(this).toString())
 
